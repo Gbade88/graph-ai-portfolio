@@ -1,221 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gbadegesin Alawode - Generative AI Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: #1a202c;
-        }
-        .gradient-text {
-            background: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .card {
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 1.5rem;
-            padding: 2rem;
-            border: 1px solid rgba(226, 232, 240, 0.5);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
-        }
-        .section-title {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-        .nav-link {
-            position: relative;
-            color: #4a5568;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: #4f46e5;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(to right, #6366f1, #ec4899);
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .gradient-btn {
-            background-image: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
-            background-size: 200% auto;
-            transition: background-position 0.5s;
-        }
-        .gradient-btn:hover {
-            background-position: right center;
-        }
-    </style>
-</head>
-<body class="text-gray-800">
+import { motion } from "framer-motion";
+import { Linkedin, BookOpen, FileText, ExternalLink } from "lucide-react";
 
-    <!-- Navigation -->
-    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200/50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold gradient-text">G.A.</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#about-me" class="nav-link">About</a>
-                <a href="#about-course" class="nav-link">Course</a>
-                <a href="#submissions" class="nav-link">Submissions</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
+export default function Portfolio() {
+  return (
+    <div className="bg-gradient-to-br from-[#FDFBFB] to-[#EBEDEE] text-gray-900 font-sans min-h-screen flex flex-col">
+      {/* Header Section */}
+      <header className="flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-16 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white rounded-b-[3rem] shadow-xl">
+        <div className="flex-1 space-y-6">
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
+            Gbadegesin <br /> O. Alawode
+          </h1>
+          <p className="text-lg md:text-xl max-w-xl opacity-90">
+            Public Health Professional, Digital Health Innovator & AI Enthusiast. Passionate about leveraging AI and technology to strengthen health systems and drive social impact.
+          </p>
+
+          {/* Social Links */}
+          <div className="flex space-x-5 mt-4">
+            <a href="https://www.linkedin.com/in/gbadegesin-alawode/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+              <Linkedin size={26} />
+            </a>
+            <a href="https://scholar.google.com/citations?user=wPbMg00AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+              <BookOpen size={26} />
+            </a>
+            <a href="https://orcid.org/0000-0002-4646-3444" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
+              <FileText size={26} />
+            </a>
+          </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#about-me" class="block px-6 py-3 text-gray-600 hover:bg-gray-50">About</a>
-            <a href="#about-course" class="block px-6 py-3 text-gray-600 hover:bg-gray-50">Course</a>
-            <a href="#submissions" class="block px-6 py-3 text-gray-600 hover:bg-gray-50">Submissions</a>
+
+        {/* Profile Image */}
+        <div className="relative mt-10 md:mt-0">
+          <div className="w-60 h-60 rounded-full bg-gradient-to-tr from-indigo-400 via-purple-400 to-pink-400 p-1 shadow-2xl">
+            <img
+              src="/profile.png"
+              alt="Gbadegesin O. Alawode"
+              className="rounded-full w-full h-full object-cover border-4 border-white"
+            />
+          </div>
         </div>
-    </nav>
-    
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-16 md:py-24">
+      </header>
 
-        <!-- Hero & About Me Section -->
-        <section id="about-me" class="mb-24">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="relative w-max mx-auto md:mx-0">
-                    <div class="absolute -top-4 -left-4 w-full h-full bg-gradient-to-br from-purple-200 to-indigo-200 rounded-full transform rotate-12 animate-pulse-slow"></div>
-                    <img src="https://placehold.co/300x300/6366F1/FFFFFF?text=G.A." alt="Gbadegesin Alawode" class="relative rounded-full mx-auto shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover border-8 border-white">
-                </div>
-                <div class="text-center md:text-left">
-                    <h1 class="text-5xl md:text-6xl font-extrabold mb-4"><span class="gradient-text">Gbadegesin Alawode</span></h1>
-                    <p class="text-xl text-gray-600 mb-6">Portfolio for "Generative AI for Work & Research"</p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Senior Public Health professional with 10+ years of experience. Passionate about leveraging technology and digital innovation to solve real-world challenges in health systems, particularly for vulnerable communities.
-                    </p>
-                </div>
-            </div>
-        </section>
+      {/* About the Course */}
+      <section className="bg-white py-20 px-8 md:px-16 shadow-inner">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-4xl font-bold mb-8 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
+        >
+          About the Course
+        </motion.h2>
+        <p className="text-lg text-gray-700 max-w-3xl mb-8 leading-relaxed">
+          The <strong>Generative AI for Work & Research</strong> course is an 8-week live cohort program by GRAPH Courses, University of Geneva. It introduces participants to no-code AI tools for automation, research, and communication, combining academic rigor with practical, industry-relevant skills.
+        </p>
+        <ul className="list-disc list-inside space-y-3 text-gray-700 max-w-2xl">
+          <li>Weekly live workshops and mentoring</li>
+          <li>No-code AI tools for task automation</li>
+          <li>Capstone project and showcase</li>
+          <li>Modules covering LLMs, AI-automated data analysis, custom GPTs, and AI for communication</li>
+        </ul>
+      </section>
 
-        <!-- About the Course Section -->
-        <section id="about-course" class="py-16">
-            <h2 class="section-title gradient-text">About the Course</h2>
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <p class="text-lg text-gray-700">
-                    This 8-week course explores practical applications of generative AI. It focuses on using no-code AI tools to automate tasks, analyze data, and enhance productivity in professional and research settings.
-                </p>
+      {/* Weekly Submissions */}
+      <section className="py-20 px-8 md:px-16 bg-gradient-to-r from-purple-50 via-pink-50 to-indigo-50">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-4xl font-bold mb-8 bg-gradient-to-r from-indigo-600 to-pink-600 bg-clip-text text-transparent"
+        >
+          My Weekly Submissions
+        </motion.h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[...Array(8)].map((_, i) => (
+            <div key={i} className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">Week {i + 1}</h3>
+              <p className="text-gray-600 mb-4">Placeholder – link will be added soon.</p>
+              <button className="inline-flex items-center text-indigo-600 font-medium hover:underline">
+                View <ExternalLink size={16} className="ml-1" />
+              </button>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Module Cards -->
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2 text-indigo-700">M1: Websites, Docs & Presentations</h3>
-                    <p class="text-gray-600">Learn how LLMs work, generate text, create no-code websites, and design presentations with AI.</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2 text-indigo-700">M2: AI-Automated Data Analysis</h3>
-                    <p class="text-gray-600">Master AI tools for data analysis, file manipulation, and creating automated reports.</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2 text-indigo-700">M3: GenAI for Research & Text Analysis</h3>
-                    <p class="text-gray-600">Explore AI for literature search, text analysis, and knowledge synthesis to accelerate information gathering.</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2 text-indigo-700">M4: Custom GPTs and Chatbots</h3>
-                    <p class="text-gray-600">Build custom chatbots for research assistance and learn about advanced LLM architecture.</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2 text-indigo-700">M5: AI for Task Automation</h3>
-                    <p class="text-gray-600">Discover strategies for automating repetitive tasks, setting up email automations, and building AI agents.</p>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2 text-indigo-700">M6: GenAI for Communication</h3>
-                    <p class="text-gray-600">Learn to use AI for research dissemination, creating visuals, and producing explanatory content.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- My Weekly Submissions Section -->
-        <section id="submissions" class="py-16">
-            <h2 class="section-title gradient-text">Weekly Submissions</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Submission Cards -->
-                <div class="card text-center">
-                    <h3 class="text-2xl font-bold mb-4">Week 1</h3>
-                    <p class="text-gray-600 mb-6">Submission for the first week.</p>
-                    <a href="#" class="gradient-btn text-white font-bold py-2 px-6 rounded-full transition">View Submission</a>
-                </div>
-                <div class="card text-center">
-                    <h3 class="text-2xl font-bold mb-4">Week 2</h3>
-                    <p class="text-gray-600 mb-6">Submission for the second week.</p>
-                    <a href="#" class="gradient-btn text-white font-bold py-2 px-6 rounded-full transition">View Submission</a>
-                </div>
-                <div class="card text-center">
-                    <h3 class="text-2xl font-bold mb-4">Week 3</h3>
-                    <p class="text-gray-600 mb-6">Submission for the third week.</p>
-                    <a href="#" class="gradient-btn text-white font-bold py-2 px-6 rounded-full transition">View Submission</a>
-                </div>
-                <div class="card text-center">
-                    <h3 class="text-2xl font-bold mb-4">Week 4</h3>
-                    <p class="text-gray-600 mb-6">Submission for the fourth week.</p>
-                    <a href="#" class="gradient-btn text-white font-bold py-2 px-6 rounded-full transition">View Submission</a>
-                </div>
-                <div class="card text-center">
-                    <h3 class="text-2xl font-bold mb-4">Week 5</h3>
-                    <p class="text-gray-600 mb-6">Submission for the fifth week.</p>
-                    <a href="#" class="gradient-btn text-white font-bold py-2 px-6 rounded-full transition">View Submission</a>
-                </div>
-                 <div class="card text-center">
-                    <h3 class="text-2xl font-bold mb-4">Week 6</h3>
-                    <p class="text-gray-600 mb-6">Submission for the sixth week.</p>
-                    <a href="#" class="gradient-btn text-white font-bold py-2 px-6 rounded-full transition">View Submission</a>
-                </div>
-                <div class="card text-center">
-                    <h3 class="text-2xl font-bold mb-4">Week 7</h3>
-                    <p class="text-gray-600 mb-6">Submission for the seventh week.</p>
-                    <a href="#" class="gradient-btn text-white font-bold py-2 px-6 rounded-full transition">View Submission</a>
-                </div>
-                <div class="card text-center">
-                    <h3 class="text-2xl font-bold mb-4">Capstone</h3>
-                    <p class="text-gray-600 mb-6">The final capstone project.</p>
-                    <a href="#" class="gradient-btn text-white font-bold py-2 px-6 rounded-full transition">View Project</a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white/50 border-t border-gray-200/50 py-8">
-        <div class="container mx-auto px-6 text-center text-gray-600">
-            <p>&copy; 2024 Gbadegesin Alawode</p>
-            <div class="flex justify-center space-x-6 mt-4">
-                <a href="#" class="hover:text-indigo-600 transition">LinkedIn</a>
-                <a href="#" class="hover:text-indigo-600 transition">Google Scholar</a>
-            </div>
+          ))}
         </div>
-    </footer>
+      </section>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
-</body>
-</html>
+      {/* Footer */}
+      <footer className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white py-8 text-center text-sm mt-auto rounded-t-[2rem] shadow-lg">
+        <p>© {new Date().getFullYear()} Gbadegesin O. Alawode — Portfolio for Generative AI for Work & Research</p>
+      </footer>
+    </div>
+  );
+}
