@@ -5,37 +5,37 @@ export default function Portfolio() {
   return (
     <div className="bg-gradient-to-br from-[#FDFBFB] to-[#EBEDEE] text-gray-900 font-sans min-h-screen flex flex-col">
       {/* Header Section */}
-      <header className="flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-16 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white rounded-b-[3rem] shadow-xl">
-        <div className="flex-1 space-y-6">
+      <header className="flex flex-col items-center text-center px-8 md:px-16 py-16 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white rounded-b-[3rem] shadow-xl">
+        {/* Profile Image */}
+        <div className="relative mb-8">
+          <div className="w-48 h-48 md:w-60 md:h-60 rounded-full bg-gradient-to-tr from-indigo-400 via-purple-400 to-pink-400 p-1 shadow-2xl mx-auto">
+            <img
+              src="https://raw.githubusercontent.com/Gbade88/graph-ai-portfolio/746e1da6d978c028cfdfae57946fe3af8d76a6d1/Gbade_Headshot_Picture.jpg"
+              alt="Gbadegesin O. Alawode"
+              className="rounded-full w-full h-full object-cover border-4 border-white"
+            />
+          </div>
+        </div>
+
+        <div className="space-y-6 max-w-2xl">
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
-            Gbadegesin <br /> O. Alawode
+            Gbadegesin O. Alawode
           </h1>
-          <p className="text-lg md:text-xl max-w-xl opacity-90">
+          <p className="text-lg md:text-xl opacity-90">
             Public Health Professional, Digital Health Innovator & AI Enthusiast. Passionate about leveraging AI and technology to strengthen health systems and drive social impact.
           </p>
 
           {/* Social Links */}
-          <div className="flex space-x-5 mt-4">
+          <div className="flex justify-center space-x-6 mt-4">
             <a href="https://www.linkedin.com/in/gbadegesin-alawode/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
-              <Linkedin size={26} />
+              <Linkedin size={28} />
             </a>
             <a href="https://scholar.google.com/citations?user=wPbMg00AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
-              <BookOpen size={26} />
+              <BookOpen size={28} />
             </a>
             <a href="https://orcid.org/0000-0002-4646-3444" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
-              <FileText size={26} />
+              <FileText size={28} />
             </a>
-          </div>
-        </div>
-
-        {/* Profile Image */}
-        <div className="relative mt-10 md:mt-0">
-          <div className="w-60 h-60 rounded-full bg-gradient-to-tr from-indigo-400 via-purple-400 to-pink-400 p-1 shadow-2xl">
-            <img
-              src="/profile.png"
-              alt="Gbadegesin O. Alawode"
-              className="rounded-full w-full h-full object-cover border-4 border-white"
-            />
           </div>
         </div>
       </header>
@@ -45,14 +45,14 @@ export default function Portfolio() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl font-bold mb-8 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
+          className="text-4xl font-bold mb-8 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent text-center"
         >
           About the Course
         </motion.h2>
-        <p className="text-lg text-gray-700 max-w-3xl mb-8 leading-relaxed">
+        <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed text-center">
           The <strong>Generative AI for Work & Research</strong> course is an 8-week live cohort program by GRAPH Courses, University of Geneva. It introduces participants to no-code AI tools for automation, research, and communication, combining academic rigor with practical, industry-relevant skills.
         </p>
-        <ul className="list-disc list-inside space-y-3 text-gray-700 max-w-2xl">
+        <ul className="list-disc list-inside space-y-3 text-gray-700 max-w-2xl mx-auto">
           <li>Weekly live workshops and mentoring</li>
           <li>No-code AI tools for task automation</li>
           <li>Capstone project and showcase</li>
@@ -65,7 +65,7 @@ export default function Portfolio() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl font-bold mb-8 bg-gradient-to-r from-indigo-600 to-pink-600 bg-clip-text text-transparent"
+          className="text-4xl font-bold mb-8 bg-gradient-to-r from-indigo-600 to-pink-600 bg-clip-text text-transparent text-center"
         >
           My Weekly Submissions
         </motion.h2>
